@@ -62,7 +62,13 @@ h1,h2,h3,h4,h5,h6 {
   float: right;
   position: relative;
   padding: 5px;
+};
+
+#weather-card{
+  background-image: url("http://www.endlessicons.com/wp-content/uploads/2012/12/mostly-sunny-icon.png");
 }
+
+
 
 ::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
 ::selection { background: #5af; color: #fff; text-shadow: none; }
