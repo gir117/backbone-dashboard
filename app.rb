@@ -15,8 +15,19 @@ get '/' do
   erb :index
 end
 
+get '/variables' do
+  erb :variables
+end
+
 
 #=====================================API ROUTES
+
+#retrieve card parameters - link backbone and sinatra
+def card_params
+  request_body = JSON.parse(request.body.read.to_s)
+  card_args = { title: request_body["title"], message: request_body["message"]} #create new hash
+end
+
 #get all cards
 get '/api/cards' do
   content_type :json
@@ -33,23 +44,26 @@ end
 
 #add a new card
 post '/api/cards' do
-  content_type :json
-  card = Card.create(params[:card])
+  # content_type :json
+  card_params()
+  # card = Card.create(params[:card])
+  card = Card.create(card_args) #this makes sinatra and backbone talk
   card.to_json
 end
 
 #update a specific card
 put '/api/cards/:id' do
-  content_type :json
+  # content_type :json
   card = Card.find(params[:id].to_i)
-  card.update(params[:card])
+  card.update(card_params)
   card.to_json
 end
 
 patch '/api/cards/:id' do
-  content_type :json
   card = Card.find(params[:id].to_i)
-  card.update(params[:card])
+  card.update(card_params)
+
+  content_type :json
   card.to_json
 
 end

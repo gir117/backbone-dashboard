@@ -5,9 +5,8 @@ body {
   margin: 1%;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Droid Serif', 'Times New Roman', 'Times', serif;
+  font-family:  'Helvetica', sans-serif;
   color: rgba(10,60,150, 0.8);
-  text-shadow: 1px 4px 6px #fff, 0 0 0 #000, 1px 4px 6px #def;
   margin-top: 2px;
   margin-bottom: 2px;
 }
@@ -64,10 +63,23 @@ h1,h2,h3,h4,h5,h6 {
   padding: 5px;
 };
 
-#weather-card{
-  background-image: url("http://www.endlessicons.com/wp-content/uploads/2012/12/mostly-sunny-icon.png");
+
+#news-card{
+  background-color: lightgrey;
 }
 
+#time-card{
+  background-color: blue;
+}
+
+#birthday-card{
+  background-color: pink;
+}
+
+#weather-card{
+  background-color: lightblue;
+  overflow: auto;
+}
 
 
 ::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
